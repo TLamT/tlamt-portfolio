@@ -19,6 +19,7 @@ type GitHubRepo = {
   topics: string[]
   fork: boolean
   archived: boolean
+  private: boolean
 }
 
 export type Project = ProjectMeta & {
@@ -61,7 +62,7 @@ export const getProjects = cache(async (): Promise<Project[]> => {
   const repos: GitHubRepo[] = await res.json()
 
   return repos
-    .filter((r) => !r.fork && !r.archived && !SKIP.has(r.name))
+    .filter((r) => !r.fork && !r.archived && !r.private && !SKIP.has(r.name))
     .map((r) => toProject(r))
     .sort((a, b) => {
       const featured = Number(Boolean(b.featured)) - Number(Boolean(a.featured))
@@ -78,6 +79,7 @@ export const getProject = cache(
     if (!res.ok) return null
 
     const repo: GitHubRepo = await res.json()
+    if (repo.private) return null
     return toProject(repo)
   }
 )
