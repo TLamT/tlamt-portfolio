@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { CursorGlow } from "@/components/cursor-glow";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-svh flex-col antialiased`}
       >
+        <CursorGlow />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

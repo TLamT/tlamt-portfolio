@@ -12,7 +12,7 @@ export function ProjectCard({ project }: { project: Project }) {
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--neon)] hover:neon-glow"
     >
       <div className="flex items-start justify-between gap-3">
-        <span className="flex size-14 items-center justify-center rounded-2xl border border-border neon-bg text-3xl transition-transform duration-300 group-hover:scale-110">
+        <span className="flex size-14 items-center justify-center rounded-2xl border border-border neon-bg text-3xl neon-glow animate-neon-pulse transition-transform duration-300 group-hover:scale-110">
           {project.emoji}
         </span>
         <ArrowUpRight className="size-5 text-muted-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:neon-text" />

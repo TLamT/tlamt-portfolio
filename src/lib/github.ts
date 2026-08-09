@@ -36,11 +36,17 @@ const SKIP = new Set([
   "Test",
   "demo-github",
   "skills-communicate-using-markdown",
+  "tlamt-portfolio",
 ])
 
 async function fetchGitHub(path: string): Promise<Response> {
   return fetch(`${GITHUB_API}${path}`, {
-    headers: { Accept: "application/vnd.github+json" },
+    headers: {
+      Accept: "application/vnd.github+json",
+      ...(process.env.GITHUB_TOKEN
+        ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` }
+        : {}),
+    },
     cache: "no-store",
   })
 }

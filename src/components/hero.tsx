@@ -4,6 +4,7 @@ import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { GithubIcon } from "@/components/icons"
 import { GITHUB_HOME } from "@/lib/projects"
+import { Typewriter } from "@/components/typewriter"
 
 const FLOATING = [
   { emoji: "🍣", className: "left-[8%] top-8 animate-float text-4xl sm:text-5xl" },
@@ -46,6 +47,10 @@ export function Hero() {
 
         <p className="animate-fade-up mt-6 max-w-xl text-balance text-lg text-muted-foreground [animation-delay:160ms]">
           由壽司郎排隊到 2048 怪奇物語，全部係我閒時整嚟玩嘅嘢。撳入去感受下每個專案嘅味道。
+        </p>
+
+        <p className="animate-fade-up mt-5 text-lg [animation-delay:200ms]">
+          我做緊嘅嘢：<Typewriter />
         </p>
 
         <div className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-3 [animation-delay:240ms]">
