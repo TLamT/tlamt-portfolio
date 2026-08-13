@@ -1,10 +1,16 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
+import { useLocale } from "@/lib/i18n"
 import type { Project } from "@/lib/github"
 
 export function ProjectCard({ project }: { project: Project }) {
+  const locale = useLocale()
+  const isEn = locale === "en"
+
   return (
     <Link
       href={`/projects/${project.id}`}
@@ -19,18 +25,20 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="mt-5 flex flex-wrap items-center gap-2">
-        <h3 className="text-xl font-bold tracking-tight">{project.name}</h3>
+        <h3 className="text-xl font-bold tracking-tight">
+          {isEn ? project.nameEn : project.name}
+        </h3>
         <span className="rounded-full border border-border neon-bg px-2.5 py-0.5 text-xs text-[color:var(--neon)]">
-          {project.vibe}
+          {isEn ? project.vibeEn : project.vibe}
         </span>
       </div>
 
       <p className="mt-1 text-sm italic text-muted-foreground">
-        「{project.tagline}」
+        「{isEn ? project.taglineEn : project.tagline}」
       </p>
 
       <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-foreground/80">
-        {project.description}
+        {isEn ? project.descriptionEn : project.description}
       </p>
 
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">

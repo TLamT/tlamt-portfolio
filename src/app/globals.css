@@ -58,6 +58,7 @@
   --animate-shimmer: shimmer 8s linear infinite;
   --animate-neon-pulse: neon-pulse 3.2s ease-in-out infinite;
   --animate-blink: blink 1s step-end infinite;
+  --animate-rise: rise 3s linear forwards;
 
   @keyframes marquee {
     from {
@@ -93,6 +94,20 @@
       opacity: 1;
     }
     50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-110vh);
       opacity: 0;
     }
   }
@@ -311,7 +326,8 @@
   .animate-blob,
   .animate-shimmer,
   .animate-neon-pulse,
-  .animate-blink {
+  .animate-blink,
+  .animate-rise {
     animation: none !important;
   }
 

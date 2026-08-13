@@ -1,20 +1,9 @@
-const ITEMS = [
-  "Next.js",
-  "React 19",
-  "TypeScript",
-  "Tailwind CSS v4",
-  "shadcn/ui",
-  "JavaScript",
-  "GitHub API",
-  "繁體中文",
-  "香港人做㗎",
-  "霓虹色",
-  "Vite",
-  "HTML / CSS",
-]
+"use client"
 
-function Row({ reverse = false }: { reverse?: boolean }) {
-  const row = [...ITEMS, ...ITEMS]
+import { useT } from "@/lib/i18n"
+
+function Row({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
+  const row = [...items, ...items]
 
   return (
     <div
@@ -36,14 +25,17 @@ function Row({ reverse = false }: { reverse?: boolean }) {
 }
 
 export function VibeMarquee() {
+  const t = useT()
+  const items = t("marquee.items") as string[]
+
   return (
     <section
-      aria-label="常用技術"
+      aria-label={t("marquee.aria") as string}
       className="group border-y border-border/60 bg-card/40 py-5"
     >
       <div className="relative flex flex-col gap-3 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <Row />
-        <Row reverse />
+        <Row items={items} />
+        <Row items={items} reverse />
       </div>
     </section>
   )

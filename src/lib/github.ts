@@ -121,6 +121,11 @@ function toProject(repo: GitHubRepo): Project {
     accent: meta?.accent ?? "oklch(0.68 0.24 335)",
     emoji: meta?.emoji ?? "✨",
     featured: meta?.featured,
+    nameEn: meta?.nameEn ?? repo.name,
+    vibeEn: meta?.vibeEn ?? "In the works",
+    taglineEn: meta?.taglineEn ?? repo.name,
+    descriptionEn:
+      meta?.descriptionEn ?? repo.description ?? "No description yet — I'll write one soon.",
     repo: repo.name,
     repoUrl: repo.html_url,
     homepage: meta?.liveUrl ?? repo.homepage,

@@ -9,6 +9,10 @@ export type ProjectMeta = {
   emoji: string
   featured?: boolean
   liveUrl?: string
+  nameEn: string
+  vibeEn: string
+  taglineEn: string
+  descriptionEn: string
 }
 
 export const PROJECT_META: Record<string, ProjectMeta> = {
@@ -24,6 +28,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     emoji: "🍣",
     featured: true,
     liveUrl: "https://sushiro-kohl.vercel.app",
+    nameEn: "Sushiro Queue Watch",
+    vibeEn: "Queue spirit",
+    taglineEn: "Skip the hunger, know the queue",
+    descriptionEn:
+      "Real-time queue numbers and wait times for every Sushiro branch in Hong Kong, with maps and phone numbers built in. Queue smarter, eat happier.",
   },
   weather: {
     id: "weather",
@@ -36,6 +45,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     accent: "oklch(0.79 0.16 200)",
     emoji: "⛈️",
     featured: true,
+    nameEn: "Weather Report",
+    vibeEn: "Rain or shine",
+    taglineEn: "Bring an umbrella or not?",
+    descriptionEn:
+      "A clean weather app showing today and the coming days, complete with radar maps. One glance before heading out and you'll know what to wear.",
   },
   Transport: {
     id: "Transport",
@@ -48,6 +62,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     accent: "oklch(0.75 0.19 60)",
     emoji: "🚌",
     featured: true,
+    nameEn: "Transport Quick Check",
+    vibeEn: "Urban pulse",
+    taglineEn: "Always have a ride lined up",
+    descriptionEn:
+      "A Hong Kong transport helper that tracks buses and live movements, so you never wait at the stop wondering where the bus is.",
   },
   "MTR.JS": {
     id: "MTR.JS",
@@ -61,6 +80,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     emoji: "🚇",
     featured: true,
     liveUrl: "https://mtr-js.vercel.app",
+    nameEn: "MTR Tools",
+    vibeEn: "Railfan daily",
+    taglineEn: "Ride the MTR to the max",
+    descriptionEn:
+      "MTR-themed mini tools for rail fans — explore routes, check journey times, and add a little fun to the daily commute.",
   },
   "2048-Stranger-Thing-": {
     id: "2048-Stranger-Thing-",
@@ -74,6 +98,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     emoji: "🌀",
     featured: true,
     liveUrl: "https://2048-stranger-thing.vercel.app",
+    nameEn: "2048 Stranger Things",
+    vibeEn: "Retro weirdness",
+    taglineEn: "2048 from the Upside Down",
+    descriptionEn:
+      "The classic 2048 with a Stranger Things twist — from the Upside Down to neon colours, dangerously addictive.",
   },
   Click_game: {
     id: "Click_game",
@@ -86,6 +115,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     accent: "oklch(0.78 0.18 45)",
     emoji: "🖱️",
     featured: true,
+    nameEn: "Click Boss",
+    vibeEn: "Speed matters",
+    taglineEn: "Click till your fingers break",
+    descriptionEn:
+      "A pure clicker game — see how many times you can click in one second and challenge your friends' limits.",
   },
   "Todo-List": {
     id: "Todo-List",
@@ -98,6 +132,11 @@ export const PROJECT_META: Record<string, ProjectMeta> = {
     accent: "oklch(0.85 0.17 95)",
     emoji: "✅",
     liveUrl: "https://todo-list-kappa-nine-49.vercel.app",
+    nameEn: "Todo List",
+    vibeEn: "For the organised",
+    taglineEn: "Never miss a thing",
+    descriptionEn:
+      "A lightweight todo list — add, tick, delete. Simple and direct. Stay tidy in life and in code.",
   },
 }
 

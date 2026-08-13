@@ -2,15 +2,11 @@
 
 import { useEffect, useState } from "react"
 
-const PHRASES = [
-  "壽司郎排隊 app",
-  "2048 怪奇物語版",
-  "港鐵即時數據",
-  "天氣實時資訊",
-  "霓虹 vibe 網站",
-]
+import { useT } from "@/lib/i18n"
 
 export function Typewriter() {
+  const t = useT()
+  const PHRASES = t("typewriter.phrases") as string[]
   const [phrase, setPhrase] = useState(0)
   const [text, setText] = useState("")
   const [deleting, setDeleting] = useState(false)
